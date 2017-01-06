@@ -1,0 +1,16 @@
+public class SeriesSum {
+  public static void main(String[] args) {
+    
+    double sum = 0;
+    int bottomarray = new int[];
+    
+    //put 3..99 in first array
+    for(int bottom = 3; bottom <= 99; bottom++) {
+      if (bottom % 2 != 0) {
+        
+      }
+    }
+    
+    //put 1..97 in second array
+  }
+}
