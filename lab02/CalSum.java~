@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class CalSum {
+  public static void main(String[] args)
+  {
+    Scanner scanner = new Scanner(System.in);
+    int sum = 0;
+    
+    do
+    {
+      System.out.print("Add this number: ");
+      int input = scanner.nextInt();
+      sum = sum + input;
+    }
+    while(scanner.nextInt() > 0);
+  }
+  
+  System.out.println("Sum is " + sum);
+}
