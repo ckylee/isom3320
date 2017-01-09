@@ -1,0 +1,13 @@
+public class SumDigits {
+  public static void main(String[] args) {
+    sumDigits(928);
+  }
+  
+  public static int sumDigits(long n) {
+    String stringnum = Long.toString(n);
+    int sum = 0;
+    for(int i = 0; i < stringnum.length(); i++)
+      sum = sum + Integer.parseInt(stringnum[i]);
+  }
+  return sum;
+}
