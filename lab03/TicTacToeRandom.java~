@@ -1,0 +1,8 @@
+public class TicTacToeRandom {
+  public static void main(String[] args) {
+    
+    //generate random tictactoe
+    int zeroOrOne = Math.floor(Math.random() * 9) % 2;
+  }
+  
+}
