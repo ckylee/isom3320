@@ -1,0 +1,19 @@
+public class TestDriver {
+  public static void main(String[] args) {
+    Bullet bullet1 = new Bullet(2,5,1);
+    Bullet bullet2 = new Bullet(0,9,1);
+    Target target = new Target(80,6,4,3);
+    
+    for(int i = 0; i < 10; i++) {
+      bullet1.move(10);
+      System.out.println("Bullet 1 moved to" + bullet1);
+      
+      bullet2.move(10);
+      System.out.println("Bullet 2 moved to" + bullet2);
+      
+      target.move(-4);
+      System.out.println("Target moved to" + target);
+      
+    }
+  }
+}

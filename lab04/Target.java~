@@ -1,0 +1,22 @@
+public class Target {
+  private int upleftx, uplefty, width, height;
+  
+  Target() {
+    int upleftx, uplefty, width, height = 0;
+  }
+  
+  Target(int newupleftx, int newuplefty, int newwidth, int newheight) {
+    upleftx = newupleftx;
+    uplefty = newuplefty;
+    width = newwidth;
+    height = newheight;
+  }
+  
+   public String toString() {
+    return "(x, y, w, h) = (" + upleftx + ", " + uplefty + ", " + width + ", " + height + ")"; 
+  }
+ 
+   public void move(int add){
+    upleftx += add;
+  }
+}

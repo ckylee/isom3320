@@ -1,0 +1,77 @@
+import java.util.*;
+import java.io.*;
+import java.text.*;
+
+public class Assignment01 {
+  public static void main(String[] args) throws Exception{
+    
+    File file = new File("test.txt");     // define a File object
+    Scanner scanner = new Scanner(file);  // define a Scanner object to read the file
+    String line;
+    
+    // write a loop to read the file "test.txt" line by line
+    // counter to count number of students, variables to calculate total scores per category
+    int students = 0;
+    double asg1Total = 0;
+    double asg2Total = 0;
+    double quiz1Total = 0; 
+    double quiz2Total = 0; 
+    double projectTotal = 0;
+    double labTotal = 0;
+    double overallTotal = 0;
+    Double[] totalScore = {
+      asg1Total, asg2Total, quiz1Total, quiz2Total, 
+      projectTotal, labTotal, overallTotal};
+    Double[] percentages = {0.0,0.0,0.0,0.0,0.0,0.0};
+    
+    while(scanner.hasNextLine()){
+      
+      students++;
+      
+      if (students == 1) //read first line
+      {
+        line = scanner.nextLine();
+        String[] header = new String[14];
+        header = line.split(",");
+        System.out.printf("%-9s %-21s %-7s %-7s %-7s %-7s %-7s %-6s %-6s%n", 
+                          "ID", "Name", "Asg 1", "Asg 2", "Quiz 1", "Quiz 2", "Project", "Lab", "Overall");
+        //percentage for calculations later
+        percentages[0] = 0.01 * Integer.parseInt(header[3].trim()); //assignment 1
+        percentages[1] = 0.01 * Integer.parseInt(header[5].trim()); //assignment 2
+        percentages[2] = 0.01 * Integer.parseInt(header[7].trim()); //quiz1
+        percentages[3] = 0.01 * Integer.parseInt(header[9].trim()); //quiz2
+        percentages[4] = 0.01 * Integer.parseInt(header[11].trim()); //project
+        percentages[5] = 0.01 * Integer.parseInt(header[13].trim()); //lab
+      }
+      
+      //following lines
+      line = scanner.nextLine();
+      String[] studentData = new String[8];
+      studentData = line.split(",");
+      
+      //overall for individual
+      double overallIndividual = 0;
+      
+      for(int i = 2; i < 8; i++) {
+        //add onto total for each category except overall total
+        totalScore[i-2] = totalScore[i-2] + Double.parseDouble(studentData[i]);
+        overallIndividual = overallIndividual + (Double.parseDouble(studentData[i]) * percentages[i-2]);
+      }
+     
+      totalScore[6] = totalScore[6] + overallIndividual;
+      System.out.printf("%-8s %-21s %-7s %-7s %-7s %-7s %-7s %-7s %-7.2f%n", 
+                        studentData[0], studentData[1], studentData[2], 
+                        studentData[3], studentData[4], studentData[5], 
+                        studentData[6], studentData[7], overallIndividual);
+    }
+    //Average of everything
+    for(int avg = 0; avg < totalScore.length; avg++)
+    {
+      totalScore[avg] = totalScore[avg] / students;
+    }
+    System.out.printf("%30s  %-7.2f %-7.2f %-7.2f %-7.2f %-7.2f %-6.2f %-6.2f%n", 
+                      "Average: ", totalScore[0], totalScore[1], totalScore[2], 
+                      totalScore[3], totalScore[4], totalScore[5], totalScore[6]);
+    scanner.close();
+  }
+}

@@ -1,0 +1,40 @@
+public class DecimalFormatting {
+  
+  public static void main(String[] args) throws Exception {
+    String[] stringArray0 = {"A", "B", "C", "D", "E"};
+    String[] stringArray1 = {"1", "2", "3", "4", "5"};
+    String[] stringArray2 = {"11", "12", "13", "14", "15"};
+    String[] stringArray3 = {"21", "22", "23", "24", "25"};
+
+    // 3D array
+    String[][] stringArray3D = {stringArray1, stringArray2, stringArray3};
+    
+    // locate each element
+    for (int i=0; i<3; i++) {
+      for (int j=0; j<5; j++) {
+        System.out.println("The element at position (" + i + "," + j + ") is " + stringArray3D[i][j]);
+      }      
+    }
+    
+    // manupulate the elements horizontally
+    int sum;
+    for (int i=0; i<3; i++) {
+      sum = 0;   // reset the sum for the next row
+      for (int j=0; j<5; j++) {
+        sum += Integer.parseInt(stringArray3D[i][j]);
+      }
+      System.out.println("The sum of row " + i + " is " + sum);
+    }
+    
+    // manupulate the elements vertically
+    for (int j=0; j<5; j++) {
+      sum = 0;   // reset the sum for the next row
+      for (int i=0; i<3; i++) {
+        sum += Integer.parseInt(stringArray3D[i][j]);
+      }
+      System.out.println("The sum of column " + stringArray0[j] + " is " + sum);
+    }
+  }
+  
+  // Think point: how to store the calculation result into another Array?
+}

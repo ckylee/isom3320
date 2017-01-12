@@ -1,0 +1,26 @@
+public class Bullet {
+  private int xcoord, ycoord, radius;
+  
+  Bullet() {
+    int xcoord, ycoord, radius = 0;
+  }
+  
+  Bullet(int newxcoord, int newycoord, int newradius) {
+    xcoord = newxcoord;
+    ycoord = newycoord;
+    radius = newradius;
+  }
+  
+    
+  public String toString() {
+    return "(x, y, r) = (" + xcoord + ", " + ycoord + ", " + radius + ")"; 
+  }
+  
+  public void move(int add){
+    xcoord += add;
+  }
+  
+  public boolean isHit(Target t) {
+    bulletDistance = Bullet.x - 
+  }
+}
