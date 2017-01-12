@@ -1,22 +1,24 @@
 public class TestDriver {
-  public static void main(String[] args) {
-    Bullet bullet1 = new Bullet(0,0,1);
-    Bullet bullet2 = new Bullet(0,0,1);
-    Target target = new Target(5,0,10,10);
-    
-    for(int i = 0; i < 10; i++) {
-      bullet1.move(1);
-      System.out.println("Bullet 1 moved to" + bullet1);
-      
-      bullet2.move(1);
-      System.out.println("Bullet 2 moved to" + bullet2);
-      
-      target.move(-1);
-      System.out.println("Target moved to" + target);
-      
-      if(bullet1.isHit(target) || bullet2.isHit(target))
-        System.out.println("Bingo!");
-      
+    public static void main(String[] args) {
+        Bullet a = new Bullet(2, 5, 1);
+        Bullet b = new Bullet(0, 9, 1);
+        Target t = new Target(80, 6, 4, 3);
+        
+
+        for(int i = 1; i <= 10; i++) {
+            a.move(10);
+            System.out.println("After moved, Bullet A: " + a);
+            b.move(10);
+            System.out.println("After moved, Bullet B: " + b);
+            t.move(-4);
+            System.out.println("After moved, Target t: " + t);
+            
+            if(a.isHit(t)) 
+                System.out.println("Bingo! Bullet A hits target");
+            
+            if(b.isHit(t)) 
+                System.out.println("Bingo! Bullet B hits target");
+            
+        }
     }
-  }
 }

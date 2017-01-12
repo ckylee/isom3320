@@ -1,38 +1,57 @@
 public class Target {
-  private static int upleftx, uplefty, width, height;
-  
-  Target() {
-    int upleftx, uplefty, width, height = 0;
-  }
-  
-  Target(int newupleftx, int newuplefty, int newwidth, int newheight) {
-    upleftx = newupleftx;
-    uplefty = newuplefty;
-    width = newwidth;
-    height = newheight;
-  }
-  
-   public String toString() {
-    return "(x, y, w, h) = (" + upleftx + ", " + uplefty + ", " + width + ", " + height + ")"; 
-  }
- 
-   public void move(int add){
-    upleftx += add;
-  }
-   
-   public static int collideLeft() {
-     return (int) upleftx - Bullet.getRadius();
-   }
-   
-   public int collideRight() {
-     return (int) upleftx + width + Bullet.getRadius();
-   }
-   
-   public int collideBottom() {
-     return (int) uplefty - height - Bullet.getRadius();
-   }
-   
-   public int collideTop() {
-     return (int) uplefty + Bullet.getRadius();
-   }
+    private int xcoord;
+    private int ycoord;
+    private int width;
+    private int height;
+    
+    public Target(int x, int y, int w, int h) {
+        xcoord = x;
+        ycoord = y;
+        width = w;
+        height = h;
+    }
+    
+    public Target() {
+        xcoord = ycoord = width = height = 0;
+    }
+    
+    public void setXcoord(int x) {
+        xcoord = x;
+    }
+    
+    public void setYcoord(int y) {
+        ycoord = y;
+    }
+    
+    public void setWidth(int w) {
+        width = w;
+    }
+
+    public void setHeight(int h) {
+        height = h;
+    }
+
+    public int getXcoord() {
+        return xcoord;
+    }
+    
+    public int getYcoord() {
+        return ycoord;
+    }
+    
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public String toString() {
+        return "(x, y, w, h) = (" + xcoord + ", " + ycoord + ", " + width + ", " + height + ")";
+    }
+    
+    public void move(int inc) {
+        xcoord += inc;
+    }
 }
