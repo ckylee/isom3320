@@ -1,0 +1,10 @@
+public class SquareTarget extends Target {
+  public void move (int inc) {
+    xcoord += inc;
+    ycoord += inc;
+  }
+  
+  public SquareTarget(int x, int y, int size) {
+    super(x, y, size, size);
+  }
+}
