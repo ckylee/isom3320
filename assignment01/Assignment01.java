@@ -2,6 +2,9 @@ import java.util.*;
 import java.io.*;
 import java.text.*;
 
+//FIX FORMATTING
+//WHAT IF ASSESSMENT NAME IS LONGER??
+
 public class Assignment01 {
   public static void main(String[] args) throws Exception{
     
@@ -69,7 +72,7 @@ public class Assignment01 {
     }
     
     //average
-    System.out.printf("%-20s %-8s", "", "Average: ");
+    System.out.printf("%-8s %-20s", "", "");
     totalScores[(totalScores.length / 2) +1] = overallTotal;
     for(int avg = 2; avg < (totalScores.length / 2) + 2; avg++) {
       double average = totalScores[avg] / i;

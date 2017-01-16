@@ -1,0 +1,24 @@
+public class Alg {
+    public static boolean lessThan(Student left, Student right, String sortby){
+        //Determine which one is smalled between left and right
+
+        //To be filled
+    }
+    
+    public static void bubblesort (Student[] arrayList, int counter, String sortby){
+        for (int i = 0; i < counter; i++){
+            for (int j=counter-1; j > i; j--){
+                //Compare two items and consider whether swapping is needed.
+                //if item a is larger than item a+1, you should swap them
+
+                //To be filled
+            }
+        }
+    }
+    
+    public static void swap (Student left, Student right){
+        //Swap the content of left with the content of right
+
+        //To be filled
+    }
+}
