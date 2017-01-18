@@ -1,0 +1,22 @@
+import javafx.application.Application;
+import javafx.event.*;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.*;
+import javafx.geometry.*;
+import javafx.scene.text.*;
+import javafx.scene.control.*;
+
+public class LoginForm extends Application {
+  
+  @Override
+  public void start(Stage primaryStage) {
+    primaryStage.setTitle("JavaFX Welcome");
+    
+    primaryStage.show();
+  }
+  public static void main(String[] args) {
+    launch(args);
+  }
+}

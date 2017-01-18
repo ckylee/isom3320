@@ -1,0 +1,29 @@
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class HelloWorld extends Application {
+  
+  @Override
+  public void start(Stage primaryStage) {   // main entry point for all JavaFX applications
+    
+    // create a Button object (btn), and define the event handler for the button
+    // !!! insert your code here...
+    
+    // create a StackPane object (root), add the Button object to it
+    // !!! insert your code here...
+    
+    // create a Scene, and add the StackPane object to it
+    // !!! insert your code here...
+     
+    // setup the Stage and show to the screen
+     // !!! insert your code here...
+  }
+  public static void main(String[] args) {
+    launch(args);
+  }
+}
