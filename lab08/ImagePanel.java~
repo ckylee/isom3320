@@ -1,0 +1,3 @@
+public class ImagePanel extends Application { private ImageView bg; private ImageView plane; public void start(Stage stage) {
+Pane pane = new Pane(); plane = new ImageView(new Image("bomb01.gif")); bg = new ImageView(new Image("land.jpg"));
+pane.getChildren().addAll(bg, plane); stage.setScene(new Scene(pane, 300, 300)); stage.setTitle("Game Demo"); stage.show(); } }
