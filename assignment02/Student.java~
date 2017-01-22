@@ -1,0 +1,27 @@
+import java.util.*;
+import java.io.*;
+import java.text.*;
+
+
+public class Student extends Course{
+  static String[] students;
+  
+  //load Course (file) info
+  public static void load() throws Exception{
+      Course.load();
+  }
+  
+  //calculate overall score student info and assignments
+  public static void processStudents() {
+   //add students to an array
+     int count = 0;
+    for(count = 0; scanner.hasNextLine(); count++) {
+    }
+    System.out.print(count);
+        for(count = 0; scanner.hasNextLine(); count++) {
+      line = scanner.nextLine();
+      String[] splitarr2 = line.split(",");
+    }
+    
+  }
+}

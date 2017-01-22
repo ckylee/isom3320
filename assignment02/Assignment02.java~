@@ -1,0 +1,10 @@
+import java.util.*;
+import java.io.*;
+import java.text.*;
+
+public class Assignment02 extends Student {
+  public static void main(String[] args) throws Exception {
+    Student.load();
+    Student.processStudents();
+  }
+}

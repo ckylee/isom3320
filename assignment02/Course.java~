@@ -1,0 +1,45 @@
+import java.util.*;
+import java.io.*;
+import java.text.*;
+
+
+public class Course{
+  private static File file;
+  public static Scanner scanner;
+  public static String line;
+  public static double[] totalScores;
+  public static double[] percentages;
+
+  //load course info
+  public static void load() throws Exception{
+    file = new File("test.txt");     // define a File object
+    scanner = new Scanner(file);  // define a Scanner object to read the file
+    
+    //first line
+    line = scanner.nextLine();
+    String[] splitarr = line.split(",");
+    totalScores = new double[splitarr.length];
+    percentages = new double[splitarr.length];
+    System.out.printf("%-9s %-19s", "ID", "Name");
+    
+    //percentages
+    int count = 0;
+    for (int p = 3; p < splitarr.length; p+=2){
+      count++;
+      percentages[p-count] = Double.parseDouble(splitarr[p]) * 0.01;
+    }
+    
+    //set totalScores and percentages to empty (0) array
+    for (int e = 0; e < splitarr.length; e++) {
+      totalScores[e] = 0;
+      percentages[e] = 0;
+    }
+    
+    //print heading; handle exceptions where assessment name is longer than 8 spaces
+    for (int j = 2; j < splitarr.length; j+=2) {
+          System.out.printf("%-10s", splitarr[j]);
+    }
+    System.out.printf("%-9s %-9s\n", "Overall", "Ranking");
+  }
+
+}
