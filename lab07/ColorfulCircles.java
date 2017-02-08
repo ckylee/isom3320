@@ -44,7 +44,7 @@ public class ColorfulCircles extends Application {
             new Stop(0.85, Color.web("#ef504c")),          
             new Stop(1, Color.web("#f2660f")),})); 
         colors.widthProperty().bind(scene.widthProperty()); 
-        colors.heightProperty().bind(scene.heightProperty()); 
+        colors.heightProperty().bind(scene.heightProperty());
         
         //root.getChildren().add(colors);
         //root.getChildren().add(circles);
